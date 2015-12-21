@@ -58,15 +58,13 @@ describe('Visual monitor testing', function() {
     shoovWebdrivercss.after(done);
   });
 
-  it('should show the home page',function(done) {
+  it('should show the login page',function(done) {
     client
-      .url(baseUrl)
-      .webdrivercss(testName + '.homepage', {
+      .url('https://panel.clicksmob.com/login.html')
+      .pause(2000)
+      .webdrivercss(testName + '.login', {
         name: '1',
-        exclude: [],
-        remove: [],
-        hide: [],
-        screenWidth: selectedCaps == 'chrome' ? [640, 960, 1200] : undefined,
+        screenWidth: selectedCaps == 'chrome' ? [1200] : undefined,
       }, resultsCallback)
       .call(done);
   });
